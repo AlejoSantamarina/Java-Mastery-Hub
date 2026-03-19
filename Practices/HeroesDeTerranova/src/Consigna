@@ -1,0 +1,58 @@
+Parcial Modelo: “Heroes de Terranova”
+La ciudad de Terranova está organizando su defensa con héroes que poseen características muy variadas. De cada Héroe se guarda:
+
+su nombre
+
+su nivel de poder (entero)
+
+su velocidad (double)
+
+una lista de habilidades especiales (por ejemplo: “vuelo”, “rayos X”, “super fuerza”, etc.)
+
+Los héroes pueden formar parte de Equipos, que a su vez pueden tener otros equipos o héroes. Existen dos tipos de equipos:
+
+Fuerza Relámpago (FR):
+
+La velocidad del equipo es la mayor entre sus integrantes.
+
+El poder total es la suma de los poderes.
+
+Las habilidades se combinan sin repetir.
+
+Comando Estratégico (CE):
+
+La velocidad es la del primer integrante.
+
+El poder total es el máximo entre sus integrantes.
+
+Las habilidades también se combinan sin repetir.
+
+Existen héroes especiales, que modifican sus características:
+
+Héroe Enmascarado: su poder se reduce a la mitad, y solo devuelve su primera habilidad.
+
+Héroe Hiperactivo: duplica su velocidad y su poder.
+
+Héroe Supremo: multiplica por 5 su velocidad y su poder.
+
+Héroe Volátil: su velocidad depende de una estrategia configurable (puede cambiar dinámicamente):
+
+por ejemplo: fija (ej: 50), o basada en el poder, o combinaciones (poder + 10), o condicionales (si tiene la habilidad “vuelo” devuelve 100, sino 30).
+
+Importante: esta forma de cálculo puede variar o crecer en el futuro.
+
+🧠 Oficina de Inscripción de Héroes
+La ciudad mantiene una lista ordenada de inscripción. Solo se permiten héroes individuales, y la lista debe estar ordenada siempre por:
+
+Nivel de poder (descendente)
+
+Si empatan en poder: por velocidad (ascendente)
+
+Si también empatan: por cantidad de habilidades (menor primero)
+
+✅ Requerimientos
+Implementar todas las clases necesarias respetando POO, Composite, Strategy, etc.
+
+Incluir comparadores necesarios para poder mantener la lista ordenada.
+
+Simular la carga de héroes en la lista (al menos 5) y mostrar la lista ordenada.

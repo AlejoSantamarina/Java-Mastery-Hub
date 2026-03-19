@@ -1,0 +1,4 @@
+//Este concepto esta definido en base a mi experiencia.
+
+//Una anotación la utilizamos para marcar un atributo, metodo, constructor entre otro y actuar en este mismo sin necesidad de estar en la misma clase.
+//Pudiendo especificar en que momento del ciclo del programa la anotación estara disponible @Retention, especificar para que elementos java esta disponible @Target, entre otros tipos de anotaciones especificadas en mi Notions.

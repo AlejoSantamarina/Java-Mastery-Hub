@@ -1,0 +1,94 @@
+Programación Orientada a Objetos – Parcial Integrador
+Fecha: [Insertar fecha de toma]
+Tema único
+
+Se desea informatizar el sistema de gestión de expediciones científicas llevadas a cabo por la Red Nacional de Exploración y Descubrimiento (RENED). Las expediciones consisten en unidades de campo compuestas por investigadores y equipos auxiliares. El sistema debe permitir organizar y consultar las distintas unidades, evaluar su rendimiento y aplicar criterios de selección.
+
+1. Investigadores y estructura jerárquica
+Cada Investigador tiene:
+
+Nombre (String)
+
+Nivel de experiencia (int)
+
+Precisión en campo (double)
+
+Lista de especializaciones (lista de String)
+
+Las unidades de trabajo pueden contener investigadores sueltos o otras unidades. Existen dos tipos de unidades:
+
+Unidad de Campo Intensiva (UCI):
+
+La precisión se calcula como el promedio de precisión de sus miembros.
+
+La experiencia total es la suma de experiencia de sus miembros.
+
+Las especializaciones se combinan sin repetir.
+
+Unidad de Respuesta Estratégica (URE):
+
+La experiencia total es la máxima entre sus miembros.
+
+La precisión es igual a la del miembro más reciente.
+
+Las especializaciones se combinan sin repetir.
+
+2. Copias filtradas de unidades
+El sistema debe permitir generar copias filtradas de una unidad o subunidad jerárquica, de forma que se conserven únicamente los investigadores que cumplen determinados criterios, excluyendo las unidades vacías.
+
+Los filtros pueden aplicarse en base a:
+
+Nivel de experiencia mayor a cierto valor
+
+Precisión menor o igual a un umbral
+
+Especialización presente (por ejemplo “geología”, “botánica”)
+
+Los filtros deben poder combinarse lógicamente con AND, OR y NOT.
+
+3. Tipos especiales de investigadores
+Además, existen investigadores con características especiales:
+
+Investigador Novato:
+
+Su experiencia se divide por 2.
+
+Su precisión se reduce en 20 unidades.
+
+Solo reporta su primera especialización.
+
+Investigador Exagerado:
+
+Duplica su experiencia y precisión.
+
+Investigador Elite:
+
+Multiplica por 4 tanto su experiencia como su precisión.
+
+Investigador Adaptativo:
+
+Su precisión se calcula mediante una estrategia configurable (ej: fija, dependiente de experiencia, condicional por especialización, etc.)
+
+Este comportamiento debe poder extenderse sin modificar la clase principal.
+
+4. Registro nacional de investigadores
+Todos los investigadores individuales pueden registrarse en una base nacional, donde se almacenan ordenados bajo el siguiente criterio:
+
+Mayor experiencia
+
+En caso de empate, mayor precisión
+
+En caso de nuevo empate, mayor cantidad de especializaciones
+
+Esta base puede consultarse en cualquier momento.
+
+Servicios obligatorios
+Obtener experiencia total, precisión y especializaciones de un investigador o unidad.
+
+Listar todos los investigadores individuales contenidos en cualquier nivel de estructura.
+
+Generar una copia filtrada según criterios lógicos compuestos.
+
+Registrar investigadores en la base nacional respetando el orden indicado.
+
+Definir nuevas estrategias para el cálculo de precisión de investigadores adaptativos.

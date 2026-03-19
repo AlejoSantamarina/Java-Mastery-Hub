@@ -1,0 +1,57 @@
+Sistema de Defensa Animal 1.0
+Se desea informatizar la organización de los Animales Guardianes del Bosque Sagrado, una fuerza defensiva secreta que protege los ecosistemas mediante habilidades naturales.
+
+De cada Animal Guardián se guarda:
+
+su nombre,
+
+su nivel de energía (entero),
+
+su agilidad (double),
+
+y una lista de habilidades (como “olfato agudo”, “ataque sigiloso”, “resistencia al frío”, etc.)
+
+Los animales se organizan en Manadas y Alianzas, que a su vez pueden incluir animales sueltos o incluso otras agrupaciones. Existen dos tipos de agrupaciones:
+
+Manada de Emboscada (ME):
+
+Su agilidad es la mayor de entre todos sus miembros.
+
+Su nivel de energía es la suma total.
+
+Las habilidades se combinan sin repetir.
+
+Alianza Estratégica (AE):
+
+Su agilidad corresponde a la del primer miembro.
+
+Su energía es el mayor nivel de energía individual.
+
+Las habilidades se combinan sin repetir.
+
+También existen Animales Especiales, que modifican su comportamiento:
+
+Animal Joven: su energía se divide por 2. Solo informa su primera habilidad.
+
+Animal Mutante: su energía y agilidad se multiplican por 3.
+
+Animal Versátil: su agilidad se calcula mediante una estrategia dinámica (puede ser un valor fijo, la energía, la suma de ambas, una condición lógica, etc.). Esta estrategia debe poder cambiarse en tiempo de ejecución.
+
+La Oficina de Registro de Guardianes permite registrar animales individuales. Los mismos se almacenan en una lista de disponibilidad que debe mantenerse ordenada siempre según:
+
+Cantidad de habilidades (de mayor a menor)
+
+Si empatan: por nivel de energía (de menor a mayor)
+
+Si aún empatan: por nombre en orden alfabético ascendente
+
+⚠️ Este orden no es natural y puede variar en el futuro, por lo tanto, debe implementarse mediante un , no con Comparable.
+
+✅ Requisitos
+Definir las clases necesarias usando correctamente los principios de POO, incluyendo herencia, composición, polimorfismo, encapsulamiento.
+
+Implementar la lógica de ordenamiento mediante , respetando los 3 criterios dados.
+
+Permitir que la clase OficinaRegistro registre animales individuales y mantenga su lista ordenada.
+
+Implementar al menos dos estrategias distintas para calcular agilidad en el AnimalVersátil.

@@ -1,0 +1,38 @@
+Mini-Framework de Inyección
+
+Contexto: Imagina que quieres que Java cree automáticamente las instancias de tus servicios para no tener que usar new Servicio() manualmente en cada clase.
+1. La Anotación @Autowired
+
+Crea una anotación llamada @Autowired:
+
+    Target: FIELD (atributos).
+
+    Retention: RUNTIME.
+
+    Sin parámetros (es solo una "marca").
+
+2. Las Clases del Sistema
+
+    Crea una clase EmailService con un método enviar(String msg) que solo haga un System.out.println.
+
+    Crea una clase UserProfile con un atributo privado:
+
+        @Autowired
+
+        private EmailService emailService;
+
+    Crea un método en UserProfile llamado saludar() que use el emailService.
+
+3. El Motor: DependencyInjector
+
+Crea una clase con un método: public static void inject(Object obj). La lógica:
+
+    Recorre los campos de obj.
+
+    Si un campo tiene @Autowired:
+
+        Obtén el Tipo (Class) de ese campo (ej. EmailService.class).
+
+        Crea una instancia de ese tipo usando campo.getType().getDeclaredConstructor().newInstance().
+
+        Haz el campo accesible y asigna (set) esa nueva instancia al objeto obj.

@@ -1,0 +1,34 @@
+Implementar y usar interfaces funcionales con:
+
+Expresiones lambda
+
+Referencias a métodos de instancia
+
+Referencias a métodos estáticos
+
+Referencias a métodos desde un parámetro
+
+📝 CONSIGNA:
+Crea una interfaz funcional llamada Buscador con un método int buscar(String s1, String s2).
+
+Implementá esa interfaz de dos formas distintas:
+
+Usando una expresión lambda
+
+Usando una referencia a método al método indexOf de la clase String.
+
+Crea una clase llamada Conversor que tenga un método de instancia llamado convertir(String valor) que convierte el String a int usando Integer.parseInt.
+
+Crea una interfaz funcional llamada Deserializador con el método int deserializar(String v).
+
+Instanciá un objeto Conversor y usá una referencia a su método para implementar la interfaz Deserializador.
+
+Probá cada una de las implementaciones llamando a sus métodos y mostrando el resultado por consola.
+
+(BONUS): Crea una interfaz funcional Verificador con boolean verificar(String s) e implementala con una referencia a método estático que compruebe si el string está vacío.
+
+💡 Tips:
+No copies métodos ni estructuras de otros lados, tratá de pensarlo y practicar.
+
+Podés escribir primero la versión con lambda, y después reemplazarla con la referencia a método para comparar.
+

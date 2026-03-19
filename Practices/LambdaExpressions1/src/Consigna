@@ -1,0 +1,7 @@
+Creá una lista de nombres (List<String>).
+
+Usá una lambda para filtrar los que empiecen con "A".
+
+Usá una referencia a método para verificar si están vacíos (String::isEmpty).
+
+Contá cuántos nombres están vacíos (""), usando removeIf o filter.

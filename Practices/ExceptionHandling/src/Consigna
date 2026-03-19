@@ -1,0 +1,28 @@
+ Sistema de Registro de Productos
+🎯 Objetivo
+Simular un sistema que:
+
+Carga productos desde un archivo (productos.txt)
+
+Permite agregar productos nuevos con validaciones
+
+Registra logs de errores
+
+Aplica distintos tipos de excepciones
+
+🧱 Reglas del negocio
+Cada producto tiene: String nombre, int cantidad, double precio.
+
+Si el archivo no existe → FileNotFoundException
+
+Si la cantidad o precio es negativo → IllegalArgumentException
+
+Si el nombre está vacío → lanzar NombreProductoInvalidoException (custom)
+
+Si el producto ya existe → lanzar ProductoDuplicadoException (custom)
+
+En caso de error, imprimir getMessage() y usar printStackTrace().
+
+Usar finally para cerrar recursos.
+
+Mostrar mensaje final: "Proceso finalizado."

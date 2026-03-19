@@ -1,0 +1,66 @@
+Contexto del Problema
+
+Una empresa de ciberseguridad requiere un motor de procesamiento de datos que sea capaz de identificar y proteger información sensible antes de ser enviada a un log o consola. Para ello, se ha decidido utilizar Anotaciones para marcar qué campos deben ser procesados de manera especial.
+Requerimientos Técnicos
+1. Definición de Anotaciones
+
+Cree una anotación personalizada llamada @SensitiveInfo que cumpla con:
+
+    Visibilidad: Debe estar disponible en tiempo de ejecución para ser procesada por el motor.
+
+    Restricción: Solo puede aplicarse a atributos (campos) de una clase.
+
+    Atributos de la anotación:
+
+        maskChar: Un carácter que se usará para ocultar el dato (por defecto: '*').
+
+        showVisible: Un valor booleano que indique si se deben mostrar los primeros 2 caracteres del dato original (por defecto: false).
+
+2. Implementación del Modelo
+
+Cree una clase llamada Employee con los siguientes atributos: name (String), salary (double) y socialSecurityNumber (String).
+
+    Aplique @SensitiveInfo al campo socialSecurityNumber con los valores por defecto.
+
+    Aplique @SensitiveInfo al campo name, configurando showVisible = true.
+
+3. El Motor de Procesamiento (Reflection)
+
+Cree una clase SecurityEngine. Esta clase debe contener un método estático: public static void maskData(Object obj)
+
+Este método debe realizar las siguientes acciones mediante la API de Reflection:
+
+    Inspeccionar todos los campos del objeto recibido, incluso si son privados.
+
+    Detectar si el campo tiene la anotación @SensitiveInfo.
+
+    Si la anotación está presente:
+
+        Obtener el valor actual del campo.
+
+        Si el campo es un String, imprimir por consola el valor "enmascarado".
+
+        Si showVisible es true, mostrar los 2 primeros caracteres y el resto ocultos con el maskChar.
+
+        Si es false, ocultar toda la cadena con el maskChar.
+
+        Si el campo no es String, simplemente notificar que el tipo no es soportado para enmascaramiento.
+
+Ejemplo de Salida Esperada
+
+Si el objeto Employee tiene: name = "Carlos" y ssn = "123-45-678", al ejecutar SecurityEngine.maskData(emp) debería mostrar:
+Plaintext
+Analizando campo: name...
+Dato protegido: Ca****
+Analizando campo: salary...
+Campo sin protección.
+Analizando campo: socialSecurityNumber...
+Dato protegido: **********
+
+Instrucciones para la entrega
+
+    Realiza el ejercicio en IntelliJ.
+
+    Asegúrate de manejar las excepciones necesarias (IllegalAccessException).
+
+    Usa field.setAccessible(true) para poder leer los valores de campos privados.
